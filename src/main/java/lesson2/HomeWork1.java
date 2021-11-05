@@ -20,4 +20,5 @@ public class HomeWork1 {
     public static double division(double x, double y){
         return x / y;
     }
+    // Выполнен расчёт простых арифметических действий.
 }
