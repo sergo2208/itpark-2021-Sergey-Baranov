@@ -1,5 +1,6 @@
 package lesson5;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 public class HomeWork5 {
@@ -10,23 +11,31 @@ public class HomeWork5 {
         int n = in.nextInt();
         System.out.println(n + "-й член последовательности Фибоначчи равен " + fibonacciSequence(n));
     }
-    public static int fibonacciSequence(int n){
+
+    public static Serializable fibonacciSequence(int n) {
         int x0 = 0;
         int x1 = 1;
         int y = 0;
-        if (n == 0){
+        String xn = "несуществующему значению, " +
+                "т.к. в данной последовательности только положительные значения";
+        if (n == 0) {
             return x0;
-        } else{
-            if (n == 1){
+        } else {
+            if (n == 1) {
                 return x1;
             } else {
-               for (int z = 2; z <= n; z++) {
-                   y = x0 + x1;
-                   x0 = x1;
-                   x1 = y;
-               }
-                return y;
+                if (n < 0) {
+                    return xn;
+                } else {
+                    for (int z = 2; z <= n; z++) {
+                        y = x0 + x1;
+                        x0 = x1;
+                        x1 = y;
+                    }
+                    return y;
+                }
             }
         }
     }
 }
+
