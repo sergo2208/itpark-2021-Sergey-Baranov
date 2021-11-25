@@ -13,7 +13,7 @@ public class HomeWork6ArraysFibonacci {
         int n = console.nextInt();
 
         // Проверка n на корректность
-        for (; n < 0 || n > 91; ) {
+        while (n < 0 || n > 91) {
             System.out.print("Введите корректное число n (см. выше): ");
             n = console.nextInt();
         }
@@ -25,30 +25,19 @@ public class HomeWork6ArraysFibonacci {
         }
         // При n <=50 на печать выводится число Фибоначчи из массива.
         // При 50 < n < 91, число Фибоначчи рассчитывается через метод и выводится на экран.
-        if (n > 50 & n < 91) {
-            long i = n;
-            System.out.println("Для числа n = " + n + " число Фибоначчи = " + fibonacciCalculate(i));
-
-        } else {
-            System.out.println("Для числа n = " + n + " число Фибоначчи = " + fibArray[n]);
-        }
+        if (n > 50 & n < 91)
+            System.out.println("Для числа n = " + n + " число Фибоначчи = " + fibonacciCalculate(n));
+        else System.out.println("Для числа n = " + n + " число Фибоначчи = " + fibArray[n]);
     }
 
     public static long fibonacciCalculate(long i) {
         long fN = 0;
-        // Проверки для n == 1; 2; 3
+        // Проверки для n == 1; 2
         if (i == 1) {
-            fN = 0;
             return fN;
-
         }
 
         if (i == 2) {
-            fN = 1;
-            return fN;
-        }
-
-        if (i == 3) {
             fN = 1;
             return fN;
         }
@@ -58,10 +47,7 @@ public class HomeWork6ArraysFibonacci {
             fN2 = fN1;
             fN1 = fN;
 
-            if (slipperyN == i) {
-                return fN;
             }
-        }
         return fN;
     }
 }

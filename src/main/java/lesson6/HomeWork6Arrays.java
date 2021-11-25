@@ -14,40 +14,38 @@ public class HomeWork6Arrays {
         }
         System.out.println("Максимальное число в массиве: " + maxArray(array));
         System.out.println("Минимальное число в массиве: " + minArray(array));
-        System.out.println("Среднее число в массиве: " + avgArray(array, n));
+        System.out.println("Среднее число в массиве: " + avgArray(array));
     }
+
     public static double maxArray(double[] array) {
         double max = array[0];
-        int i = 1;
-        while (i < array.length) {
+        for (int i = 1; i < array.length; i++) {
             if (max < array[i]) {
                 max = array[i];
             }
-            i++;
         }
         return max;
     }
 
     public static double minArray(double[] array) {
         double min = array[0];
-        int i = 1;
-        while (i < array.length) {
+        for (int i = 1; i < array.length; i++) {
             if (min > array[i]) {
                 min = array[i];
             }
-            i++;
         }
         return min;
     }
 
-    public static double avgArray(double[] array, int n) {
+    public static double avgArray(double[] array) {
         double avg = 0;
         int i = 0;
         while (i < array.length) {
             avg += array[i];
             i++;
         }
-        avg = avg / n;
+        avg = avg / array.length;
         return avg;
     }
 }
+
