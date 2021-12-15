@@ -1,7 +1,10 @@
 package lesson12;
 
 public class MyArraySizeException extends Exception {
-    //    MyArraySizeException(String msg) {
-//        super(msg);
-//    }
+
+    public MyArraySizeException(String message) {
+
+        super(message);
+    }
+
 }
