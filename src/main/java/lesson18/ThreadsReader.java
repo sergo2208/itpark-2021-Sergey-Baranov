@@ -7,28 +7,28 @@ import java.util.concurrent.ExecutionException;
 public class ThreadsReader {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-        // основной код для работы с файлом, обёрнутый в отдельный поток
+        //код для работы с файлом, обёрнутым в отдельный поток
         CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
             try {
                 File file = new File("src/main/resources/lesson18.txt");
-                //создаем объект FileReader для объекта File
+                //создание объекта FileReader для объекта File
                 FileReader fr = new FileReader(file);
-                //создаем BufferedReader с существующего FileReader для построчного считывания
+                //создание BufferedReader с существующего FileReader для построчного считывания
                 BufferedReader reader = new BufferedReader(fr);
-                // считаем сначала первую строку
+                // считывание сначала первой строки
                 String line = reader.readLine();
 
-                // Создадим переменную для инкремента имён файлов
+                // Создание переменной для инкремента имён файлов
                 int fileName = 1;
 
                 while (line != null) {
-                    // Это чисто для себя, для контроля, что строки выводятся. Можно закомментить строку кода ниже:
+                    // для контроля, что строки выводятся. Можно закомментить строку кода ниже:
                     System.out.println("Запись строки: " + line);
 
-                    // Сконвертируем переменную в строку:
+                    // конвертациям переменной в строку:
                     String nameIncrement = intToString(fileName);
 
-                    // Запишем в файл считанную строку
+                    // запись в файл считанной строки
                     try (FileWriter writer = new FileWriter("src/main/resources/file" + nameIncrement + ".txt", true)) {
                         writer.write(line);
                         writer.flush();
@@ -36,7 +36,7 @@ public class ThreadsReader {
                         System.out.println(ex.getMessage());
                     }
 
-                    // считываем остальные строки в цикле
+                    // считывание остальных строк в цикле
                     line = reader.readLine();
                     fileName++;
                 }
@@ -47,13 +47,10 @@ public class ThreadsReader {
 
         // Вывод результатов вычислений:
         future.get();
-
     }
 
     // Метод для преобразования числа в строку для имени файла
     public static String intToString(int nameInc) {
         return Integer.toString(nameInc);
     }
-
-
 }
