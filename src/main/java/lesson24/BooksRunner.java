@@ -23,7 +23,7 @@ public class BooksRunner {
         Scanner in= new Scanner(System.in);
         String str = in.next();
         runInsideSession(session -> {
-            Query<Books> searchBook = session.createQuery("from Book where name like :name or author like :author", Books.class);
+            Query<Books> searchBook = session.createQuery("from Books where name like :name or author like :author", Books.class);
             searchBook.setParameter("name", "%" + str + "%");
             searchBook.setParameter("author", "%" + str + "%");
             searchBook.getResultList().forEach(System.out::println);
