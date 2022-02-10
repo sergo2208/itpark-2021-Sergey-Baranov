@@ -12,3 +12,16 @@ services:
       - '3306:3306'
     expose:
       - '3306'
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_DB: 'mydb'
+      MYSQL_USER: "myuser'
+      MYSQL_PASSWORD: '321'
+      MYSQL_ROOT_PASSWORD: '321'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
