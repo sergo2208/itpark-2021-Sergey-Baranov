@@ -11,6 +11,7 @@ public class CreateTableRunner {
     private static final String login = "pguser";
     private static final String password = "123";
 
+
     @SneakyThrows
     public static void main(String[] args) {
         Class.forName(dbDriver);

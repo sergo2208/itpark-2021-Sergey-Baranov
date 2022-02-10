@@ -16,6 +16,7 @@ public class BooksRunner {
     static {
         config = new Configuration();
         config.configure();
+
     }
 
     public static void main(String[] args) {
