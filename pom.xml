@@ -16,7 +16,7 @@
         <commons-lang.version>20030203.000129</commons-lang.version>
         <jaxb.version>3.0.1</jaxb.version>
         <jackson-databind.version>2.13.1</jackson-databind.version>
-        <opencsv.version>5.5.2</opencsv.version>
+        <opencsv.version>5.4</opencsv.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
         <junit.version>4.13.2</junit.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
